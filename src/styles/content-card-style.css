@@ -1,0 +1,23 @@
+.card {
+  width: 300px;
+  height: 200px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 7px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 500ms ease;
+  background-color: #fff;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  background-color: #ff0000;
+  inset: 0;
+  transform: translateY(-98%);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}

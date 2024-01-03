@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --first-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  
+}
