@@ -3,10 +3,11 @@
 import Loading from '@/components/atoms/loading';
 import Card from '@/components/molecules/card';
 import getValues from '@/functions/getValues';
+import { ICharacter } from '@/interfaces/ICharacter';
 import { useEffect, useState } from 'react';
 
 export default function Characters() {
-  const [characters, setCharacters] = useState<any[]>();
+  const [characters, setCharacters] = useState<ICharacter[]>();
   const [characterToFilter, setCharacterToFilter] = useState<string>('');
 
   useEffect(() => {
@@ -14,7 +15,7 @@ export default function Characters() {
   }, [characterToFilter])
 
   async function getCharactersFn() {
-    const requestCharacters = await getValues<any>('characters', '?filter[name_cont]', characterToFilter);
+    const requestCharacters = await getValues<ICharacter[]>('characters', '', '?filter[name_cont]', characterToFilter);
 
     setCharacters(requestCharacters);
   }
@@ -31,7 +32,7 @@ export default function Characters() {
       <div className='flex justify-center items-center flex-wrap gap-4 p-4' data-test='cardsContainer'>
         {!!characters?.length ? (
           characters?.map((character, i) => (
-            <Card title={character.attributes.name} image={character.attributes.image} firstInfoTitle='Espécie' firstInfo={character.attributes.species} secondInfoTitle='Gênero' secondInfo={character.attributes.gender} key={i} />
+            <Card id={character.id} route='characters' title={character.attributes.name} image={character.attributes.image} firstInfoTitle='Espécie' firstInfo={character.attributes.species} secondInfoTitle='Gênero' secondInfo={character.attributes.gender} key={i} />
           ))
         ): (
           <Loading />

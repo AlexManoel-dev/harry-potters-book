@@ -3,10 +3,11 @@
 import Loading from '@/components/atoms/loading';
 import Card from '@/components/molecules/card';
 import getValues from '@/functions/getValues';
+import { ISpell } from '@/interfaces/ISpell';
 import { useEffect, useState } from 'react';
 
 export default function Spells() {
-  const [spells, setSpells] = useState<any[]>();
+  const [spells, setSpells] = useState<ISpell[]>();
   const [spellsToFilter, setSpellsToFilter] = useState<string>('');
 
   useEffect(() => {
@@ -14,7 +15,7 @@ export default function Spells() {
   }, [spellsToFilter])
 
   async function getSpellsFn() {
-    const requestSpells = await getValues<any>('spells', '?filter[name_cont_any]', spellsToFilter);
+    const requestSpells = await getValues<ISpell[]>('spells', '', '?filter[name_cont_any]', spellsToFilter);
 
     setSpells(requestSpells);
   }
@@ -31,7 +32,7 @@ export default function Spells() {
       <div className='flex justify-center items-center flex-wrap gap-4 p-4' data-test='cardsContainer'>
         {!!spells?.length ? (
           spells?.map((spell, i) => (
-            <Card title={spell.attributes.name} image={spell.attributes.image} firstInfoTitle='Categoria' firstInfo={spell.attributes.category} secondInfoTitle='Efeito' secondInfo={spell.attributes.effect} key={i} />
+            <Card id={spell.id} route='spells' title={spell.attributes.name} image={spell.attributes.image} firstInfoTitle='Categoria' firstInfo={spell.attributes.category} secondInfoTitle='Efeito' secondInfo={spell.attributes.effect} key={i} />
           ))
         ) : (
           <Loading />

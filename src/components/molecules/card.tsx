@@ -2,8 +2,9 @@
 
 import { ImageOff } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
-export default function Card({ firstInfoTitle, firstInfo, secondInfoTitle, secondInfo, title, image }: any) {
+export default function Card({ id, route, firstInfoTitle, firstInfo, secondInfoTitle, secondInfo, title, image }: any) {
   return (
   <div className='w-[350px] min-h-[450px] relative md:w-[400px] flex justify-center items-center flex-col gap-4 p-4 bg-white rounded-md border-r border-b border-l border-t border-gray-400 cursor-pointer hover:-translate-y-2 transition'>
     {image ? (
@@ -27,7 +28,9 @@ export default function Card({ firstInfoTitle, firstInfo, secondInfoTitle, secon
       <p className='mt-1'><b>{secondInfoTitle}:</b> {secondInfo ?? 'N/A'}</p>
     </div>
 
-    <button className='w-[85%] py-2 mt-2 bg-slate-500 rounded-md text-white absolute bottom-5'>Ver mais</button>
+    <Link
+      href={`/${route}/${id}`}
+      className='w-[85%] py-2 mt-2 bg-slate-500 rounded-md text-white text-center absolute bottom-5'>Ver mais</Link>
   </div>
   )
 }

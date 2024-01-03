@@ -1,6 +1,6 @@
 describe('template spec', () => {
   it('should render and display expected content', () => {
-    cy.visit('http://localhost:3000/')
+    cy.visit('/')
 
     cy.get('a[href="/books"]').click()
     cy.url().should('include', '/books')

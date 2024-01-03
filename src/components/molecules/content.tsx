@@ -2,15 +2,15 @@
 
 import { useEffect } from 'react';
 import '../../styles/content-card-style.css';
+import { IContentCard } from '@/interfaces/IContentCard';
 
 export default function Content() {
-  
 
   useEffect(() => {
 
   }, [])
   
-  const cards = [
+  const cards: IContentCard[] = [
     {
       title: 'Livros',
       qtd: 7

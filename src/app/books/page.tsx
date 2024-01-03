@@ -3,17 +3,18 @@
 import Loading from '@/components/atoms/loading';
 import Card from '@/components/molecules/card';
 import getValues from '@/functions/getValues';
+import { IBook } from '@/interfaces/IBook';
 import { useEffect, useState } from 'react'
 
 export default function Books() {
-  const [books, setBooks] = useState<any[]>();
+  const [books, setBooks] = useState<IBook[]>();
 
   useEffect(() => {
     getBooksFn();
   }, [])
 
   async function getBooksFn() {
-    const requestBooks = await getValues<any>('books', '', '');
+    const requestBooks = await getValues<IBook[]>('books');
 
     setBooks(requestBooks);
   }
@@ -29,7 +30,7 @@ export default function Books() {
       <div className='flex justify-center items-center flex-wrap gap-4 p-4'>
         {!!books?.length ? (
           books?.map((book, i) => (
-            <Card title={book.attributes.title} image={book.attributes.cover} firstInfoTitle='Autor' firstInfo={book.attributes.author} secondInfoTitle='Data de lançamento' secondInfo={formatDate(book.attributes.release_date)} key={i} />
+            <Card id={book.id} route='books' title={book.attributes.title} image={book.attributes.cover} firstInfoTitle='Autor' firstInfo={book.attributes.author} secondInfoTitle='Data de lançamento' secondInfo={formatDate(book.attributes.release_date as string)} key={i} />
           ))
         ): (
           <Loading />

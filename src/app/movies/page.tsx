@@ -3,17 +3,18 @@
 import Loading from '@/components/atoms/loading';
 import Card from '@/components/molecules/card';
 import getValues from '@/functions/getValues';
+import { IMovie } from '@/interfaces/IMovie';
 import { useEffect, useState } from 'react';
 
 export default function Movies() {
-  const [movies, setMovies] = useState<any[]>();
+  const [movies, setMovies] = useState<IMovie[]>();
 
   useEffect(() => {
     getMoviesFn();
   }, [])
 
   async function getMoviesFn() {
-    const requestMovies = await getValues<any>('movies');
+    const requestMovies = await getValues<IMovie[]>('movies');
 
     setMovies(requestMovies);
   }
@@ -29,7 +30,7 @@ export default function Movies() {
       <div className='flex justify-center items-center flex-wrap gap-4 p-4'>
         {!!movies?.length ? (
           movies?.map((movie, i) => (
-            <Card title={movie.attributes.title} image={movie.attributes.poster} firstInfoTitle='Tempo de filme' firstInfo={movie.attributes.running_time} secondInfoTitle='Data de lançamento' secondInfo={movie.attributes.release_date} key={i} />
+            <Card id={movie.id} route='movies' title={movie.attributes.title} image={movie.attributes.poster} firstInfoTitle='Tempo de filme' firstInfo={movie.attributes.running_time} secondInfoTitle='Data de lançamento' secondInfo={movie.attributes.release_date} key={i} />
           ))
         ): (
           <Loading />
