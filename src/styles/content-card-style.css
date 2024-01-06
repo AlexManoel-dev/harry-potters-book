@@ -7,13 +7,14 @@
   overflow: hidden;
   cursor: pointer;
   transition: all 500ms ease;
-  background-color: #fff;
+  color: var(--font-color);
+  background-color: var(--thirty-color);
 }
 
 .card::after {
   content: '';
   position: absolute;
-  background-color: #ff0000;
+  background-color: var(--ten-color);
   inset: 0;
   transform: translateY(-98%);
 }

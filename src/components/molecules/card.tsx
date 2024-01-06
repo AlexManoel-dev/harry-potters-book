@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function Card({ id, route, firstInfoTitle, firstInfo, secondInfoTitle, secondInfo, title, image }: any) {
   return (
-  <div className='w-[350px] min-h-[450px] relative md:w-[400px] flex justify-center items-center flex-col gap-4 p-4 bg-white rounded-md border-r border-b border-l border-t border-gray-400 cursor-pointer hover:-translate-y-2 transition'>
+  <div className='w-[350px] min-h-[450px] relative md:w-[400px] flex justify-center items-center flex-col gap-4 p-4 bg-[--thirty-color] text-[--font-color] rounded-md border-r border-b border-l border-t border-gray-400 cursor-pointer hover:-translate-y-2 transition'>
     {image ? (
       <div className='w-full flex justify-center items-center'>
         <div className='w-[150px] h-[150px]'>
@@ -30,7 +30,7 @@ export default function Card({ id, route, firstInfoTitle, firstInfo, secondInfoT
 
     <Link
       href={`/${route}/${id}`}
-      className='w-[85%] py-2 mt-2 bg-slate-500 rounded-md text-white text-center absolute bottom-5'>Ver mais</Link>
+      className='w-[85%] py-2 mt-2 bg-[#B5D6B2] rounded-md text-black text-center absolute bottom-5'>Ver mais</Link>
   </div>
   )
 }

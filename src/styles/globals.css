@@ -3,9 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --first-color: #fff;
+  --sixty-color: #53131E;
+  --thirty-color: #5A464C;
+  --ten-color: #FFFACC;
+  --font-color: #FFEFBD;
 }
 
 @media (prefers-color-scheme: dark) {
   
+}
+
+body {
+  background-color: var(--sixty-color);
 }

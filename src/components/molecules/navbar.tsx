@@ -15,25 +15,25 @@ export default function Navbar() {
   
   return (
     <>
-      <nav className="bg-white shadow-md sticky top-0 z-[999]">
+      <nav className="bg-[--sixty-color] shadow-md sticky top-0 z-[999]">
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='flex items-center justify-between h-16'>
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <Link href="/" className='text-black'>Logo</Link>
+                <Link href="/" className='text-[--font-color]'>HP&apos;s Book</Link>
               </div>
             </div>
             <div className='hidden md:block'>
               <div className="ml-4 flex items-center space-x-4">
-                <Link href="/books" className='text-black hover:bg-black hover:text-white rounded-lg p-2 transition-colors'>Livros</Link>
-                <Link href="/characters" className='text-black hover:bg-black hover:text-white rounded-lg p-2 transition-colors'>Personagens</Link>
-                <Link href="/movies" className='text-black hover:bg-black hover:text-white rounded-lg p-2 transition-colors'>Filmes</Link>
-                <Link href="/potions" className='text-black hover:bg-black hover:text-white rounded-lg p-2 transition-colors'>Poções</Link>
-                <Link href="/spells" className='text-black hover:bg-black hover:text-white rounded-lg p-2 transition-colors'>Feitiços</Link>
+                <Link href="/books" className='text-[--font-color] hover:bg-[--ten-color] hover:text-black rounded-lg p-2 transition-colors'>Livros</Link>
+                <Link href="/characters" className='text-[--font-color] hover:bg-[--ten-color] hover:text-black rounded-lg p-2 transition-colors'>Personagens</Link>
+                <Link href="/movies" className='text-[--font-color] hover:bg-[--ten-color] hover:text-black rounded-lg p-2 transition-colors'>Filmes</Link>
+                <Link href="/potions" className='text-[--font-color] hover:bg-[--ten-color] hover:text-black rounded-lg p-2 transition-colors'>Poções</Link>
+                <Link href="/spells" className='text-[--font-color] hover:bg-[--ten-color] hover:text-black rounded-lg p-2 transition-colors'>Feitiços</Link>
               </div>
             </div>
             <div className="md:hidden flex items-center">
-              <button className='inline-flex items-center justify-center p-2 rounded-md text-black
+              <button className='inline-flex items-center justify-center p-2 rounded-md text-[--font-color]
                 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
                   onClick={toggleNavbar}
               >
@@ -70,11 +70,11 @@ export default function Navbar() {
         {isClick && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link href="/books" className='text-black block hover:bg-white hover:text-black rounded-lg p-2 transition-colors'>Livros</Link>
-              <Link href="/characters" className='text-black block hover:bg-white hover:text-black rounded-lg p-2 transition-colors'>Personagens</Link>
-              <Link href="/movies" className='text-black block hover:bg-white hover:text-black rounded-lg p-2 transition-colors'>Filmes</Link>
-              <Link href="/potions" className='text-black block hover:bg-white hover:text-black rounded-lg p-2 transition-colors'>Poções</Link>
-              <Link href="/spells" className='text-black block hover:bg-white hover:text-black rounded-lg p-2 transition-colors'>Feitiços</Link>
+              <Link href="/books" className='text-[--font-color] block hover:bg-white hover:text-[--font-color] rounded-lg p-2 transition-colors'>Livros</Link>
+              <Link href="/characters" className='text-[--font-color] block hover:bg-white hover:text-[--font-color] rounded-lg p-2 transition-colors'>Personagens</Link>
+              <Link href="/movies" className='text-[--font-color] block hover:bg-white hover:text-[--font-color] rounded-lg p-2 transition-colors'>Filmes</Link>
+              <Link href="/potions" className='text-[--font-color] block hover:bg-white hover:text-[--font-color] rounded-lg p-2 transition-colors'>Poções</Link>
+              <Link href="/spells" className='text-[--font-color] block hover:bg-white hover:text-[--font-color] rounded-lg p-2 transition-colors'>Feitiços</Link>
             </div>
           </div>
         )}

@@ -2,7 +2,7 @@
   margin: auto;
   border: 20px solid #EAF0F6;
   border-radius: 50%;
-  border-top: 20px solid #000;
+  border-top: 20px solid var(--thirty-color);
   width: 200px;
   height: 200px;
   animation: spinner 4s linear infinite;
